@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<html>
+<body>
+
+<h2 id="demo">What can javascript do?</h2>
+
+<p id="demo2">javascript can change stuff</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "new h2 text"'>Change h2</button>
+
+<br>
+<br>
+
+<button type="button" onclick='document.getElementById("dynamite").src="images/explosion.jpg"'>Detonate</button>
+
+<img id="dynamite" src="images/dynamite.png" style = "width:100px">
+
+<button type="button" onclick='document.getElementById("dynamite").src="images/dynamite.png"'>Bring it back</button>
+
+<br>
+<br>
+
+<button type="button" onclick='
+let fontSize = Number(document.getElementById("grow_text").style.fontSize.slice(0, -2));
+if (fontSize == 0) {
+    fontSize = 20;
+} 
+else {
+    fontSize *= 1.25;
+}
+
+if (fontSize < 250) {
+    let fontSizeStr = "" + fontSize;
+    document.getElementById("grow_text").style.fontSize=fontSizeStr + "px";
+}
+else {
+    document.getElementById("grow_text").style.backgroundImage = "url(\"images/explosion.jpg\")";
+    document.getElementById("grow_text").innerHTML = "⠀";
+}
+
+
+'>bigger!</button>
+
+<br>
+
+<p id="grow_text">hi</p>
+
+</body>
+</html>
